@@ -2,8 +2,8 @@
 ;;; commentary :
 
 ;;; set the frame to be transparent
-(set-frame-parameter (selected-frame) 'alpha '(90 90))
-(add-to-list 'default-frame-alist '(alpha 90 90))
+(set-frame-parameter (selected-frame) 'alpha '(80 80))
+(add-to-list 'default-frame-alist '(alpha 80 80))
 
 ;;; warn only about
 (setq guru-warn-only t)
@@ -20,6 +20,13 @@
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
 (setq prelude-clean-whitespace-on-save nil)
+
+;; disable alloc warnings  on bgq
+(setq warning-suppress-types '((alloc)))
+;;
+;; auctex
+;;
+(put 'LaTeX-command 'safe-local-variable 't)
 
 
 ;;;
