@@ -35,9 +35,18 @@
 (require 'cl)
 (require 'package)
 
+(defadvice package-compute-transaction
+  (before package-compute-transaction-reverse (package-list requirements) activate compile)
+  "reverse the requirements"
+  (setq requirements (reverse requirements))
+  (print requirements))
+
+;(add-to-list 'package-archives
+;             ;;'("melpa" . "http://melpa.milkbox.net/packages/") t)
+;             '("melpa" . "http://melpa.org/packages/") t)
+
 (add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
-;;'("melpa" . "http://melpa.org/packages/") t)
+             '("melpa-stable" . "http://stable.melpa.org/packages/") t)
 ;; set package-user-dir to be relative to Prelude install path
 (setq package-user-dir (expand-file-name "elpa" prelude-dir))
 (package-initialize)
