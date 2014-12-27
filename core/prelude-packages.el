@@ -41,9 +41,9 @@
   (setq requirements (reverse requirements))
   (print requirements))
 
-;(add-to-list 'package-archives
+(add-to-list 'package-archives
 ;             ;;'("melpa" . "http://melpa.milkbox.net/packages/") t)
-;             '("melpa" . "http://melpa.org/packages/") t)
+             '("melpa" . "http://melpa.org/packages/") t)
 
 (add-to-list 'package-archives
              '("melpa-stable" . "http://stable.melpa.org/packages/") t)
