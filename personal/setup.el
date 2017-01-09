@@ -1,6 +1,10 @@
 (prelude-require-packages '(yasnippet))
 (add-to-list 'load-path (concat prelude-personal-dir "/snippets"))
 
+(prelude-require-packages '(yaml-mode))
+(prelude-require-packages '(dockerfile-mode))
+(add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode))
+
 (add-to-list 'load-path (concat prelude-personal-dir))
 (require 'gmsh)
 (require 'yasnippet)
